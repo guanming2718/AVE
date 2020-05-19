@@ -6,4 +6,5 @@ void test_quadratic();
 void test_cubic();
 void test_quatic();
 void test_union();
+void test_vec();
 #endif

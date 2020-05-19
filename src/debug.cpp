@@ -126,3 +126,9 @@ void test_union(){
     std::cout<<std::endl<<std::endl;
 
 }
+
+void test_vec(){
+    vec<double,3> a = {1,2,3};
+    vec<double,3> b = {2,3,4};
+    std::cout<<a.norm();
+}

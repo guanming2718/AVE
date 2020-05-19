@@ -7,6 +7,8 @@ public:
     double theta; // orientation
     double a,b; // a --semi-major axis,b--semi-minor axis
     vec<double,2> center = {0.0,0.0};// center of this ellipse
+    double Ma, Mp; //Ma-active torque(chirality) Mp-passive torque exerted on this object
+    vec2 Fa,Fp;//active force(self-propulsion)  Fp--passive force exerted on this object 
     Ellipse() = default;
     Ellipse(double a,double b,double theta,vec<double,2>& center){
         this->a = a;

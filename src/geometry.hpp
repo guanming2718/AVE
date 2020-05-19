@@ -11,6 +11,7 @@ public:
     unsigned get_index(){return index;}                           
     std::vector<double> eqn_coeff();    
     std::vector<vec2 > intersection(Geometry&)=0; // intersection points of two geometry object
+    vec2 tangent_vector(vec2&)=0;
     friend std::ostream& operator<<(std::ostream&,Geometry&);
 };
 #endif
