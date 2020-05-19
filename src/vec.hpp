@@ -5,7 +5,7 @@
 #include<array>
 #include<iostream>
 using std::vector;
-template<class T,size_t D> // T for type, L is the length of the vector
+template<class T,size_t D> // T for type, D is the length of the vector
 class vec{
     public:
         std::array<T,D> arr;    
@@ -76,9 +76,12 @@ class vec{
            }
            return std::sqrt(sum_sqr);
         }
-        
+        template<class T0,size_t D0>
+        friend vec<T0,D0> operator*(const T0&,const vec<T0,D0>&);
+
         template<class T0,size_t D0> 
         friend std::ostream& operator<<(std::ostream&,const vec<T0,D0>& );
+
         
 };
 //end of the class 
@@ -97,5 +100,14 @@ std::ostream& operator<<(std::ostream& os,const vec<T,D> &v){
     }
     os << ']';
     return os;
+}
+
+template<class T,size_t D>
+vec<T,D> operator*(const T &a, const vec<T,D> &v){
+    vec<T,D> rtn; 
+    for (size_t i=0;i<D;i++){
+        rtn[i] = a*v.arr[i];
+    }
+    return rtn;
 }
 #endif
